@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #831f82;
+}
+
+.navbar-list {
+  display: flex;
+  margin-right: 1rem;
+  list-style: none;
+}
+
+.navbar-list-item {
+  margin: 0 0.5rem;
+}
+
+.navbar-list-item-link {
+  text-decoration: none;
+}
