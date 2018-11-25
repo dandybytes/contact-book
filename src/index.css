@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-1: rgb(130, 30, 130);
+  --color-2: rgb(0, 160, 225);
+}
+
 body {
   margin: 0;
   padding: 0;

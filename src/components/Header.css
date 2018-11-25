@@ -2,7 +2,24 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #831f82;
+  background-color: var(--color-1);
+  color: white;
+}
+
+.logo-title {
+  margin: 0 1rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.65rem;
+  text-transform: uppercase;
+}
+
+.logo-title-1 {
+  /* color: white; */
+  font-weight: 300;
+}
+
+.logo-title-2 {
+  color: var(--color-2);
 }
 
 .navbar-list {
@@ -17,4 +34,10 @@ header {
 
 .navbar-list-item-link {
   text-decoration: none;
+  color: white;
+  opacity: 0.7;
+}
+
+.navbar-list-item-link:hover {
+  opacity: 1;
 }

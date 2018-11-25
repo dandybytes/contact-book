@@ -1,3 +1,7 @@
 .contact-list {
-  background-color: #009fe3;
+  /* background-color: #009fe3; */
+  width: 100%;
+  margin: 0;
+
+  padding: 0;
 }

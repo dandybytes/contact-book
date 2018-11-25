@@ -16,14 +16,16 @@ class App extends Component {
         <BrowserRouter>
           <React.Fragment>
             <Header />
-            <Switch>
-              <Route path="/" exact component={ContactList} />
-              <Route path="/add" exact component={AddContact} />
-              <Route path="/favorite" exact component={Favorites} />
-              <Route path="/blocked" exact component={Blocked} />
-              <Route path="/about" exact component={About} />
-              <Route component={NotFound} />
-            </Switch>
+            <main>
+              <Switch>
+                <Route path="/" exact component={ContactList} />
+                <Route path="/add" exact component={AddContact} />
+                <Route path="/favorite" exact component={Favorites} />
+                <Route path="/blocked" exact component={Blocked} />
+                <Route path="/about" exact component={About} />
+                <Route component={NotFound} />
+              </Switch>
+            </main>
           </React.Fragment>
         </BrowserRouter>
       </div>

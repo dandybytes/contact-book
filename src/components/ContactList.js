@@ -1,13 +1,17 @@
 import React, { Component } from "react";
+import { contacts } from "../contacts/sample-contacts";
 import "./ContactList.css";
+import ContactItem from "./ContactItem";
 
 class ContactList extends Component {
   state = {};
   render() {
     return (
-      <div className="contact-list">
-        <p>Contact List here</p>
-      </div>
+      <ul className="contact-list">
+        {contacts.map(contact => (
+          <ContactItem key={contact.id} contact={contact} />
+        ))}
+      </ul>
     );
   }
 }
