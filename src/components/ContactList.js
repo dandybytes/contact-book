@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { contacts } from "../contacts/sample-contacts";
+import { connect } from "react-redux";
+import { loadDefaultContacts } from './../actions/actions';
 import "./ContactList.css";
 import ContactItem from "./ContactItem";
 
 class ContactList extends Component {
-  state = {};
+  componentDidMount() {
+    if (this.props.contacts.contacts.length === 0) {
+      this.props.loadDefaultContacts()
+    }
+  }
+  
   render() {
+    const { contacts } = this.props.contacts;
     return (
       <ul className="contact-list">
         {contacts.map(contact => (
@@ -16,4 +23,9 @@ class ContactList extends Component {
   }
 }
 
-export default ContactList;
+const mapStateToProps = ({ contacts }) => ({ contacts });
+
+export default connect(
+  mapStateToProps,
+  {loadDefaultContacts}
+)(ContactList);

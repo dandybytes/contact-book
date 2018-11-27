@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { deleteContact } from "../actions/actions";
 import "./ContactItem.css";
 
 class ContactItem extends Component {
@@ -12,7 +14,7 @@ class ContactItem extends Component {
     return (
       <li className="contact-list-item">
         <h3 className="contact-list-item-title">
-          {`${firstName} ${lastName} `}
+          {`${firstName} ${lastName}`}
           {this.state.showDetails ? (
             <i
               className="fas fa-caret-up details-icon"
@@ -26,7 +28,7 @@ class ContactItem extends Component {
           )}
           <i
             className="fas fa-times remove-icon"
-            onClick={() => console.log("deleting contact: ", id)}
+            onClick={() => this.props.deleteContact(id)}
           />
         </h3>
         {this.state.showDetails && (
@@ -46,4 +48,7 @@ class ContactItem extends Component {
   }
 }
 
-export default ContactItem;
+export default connect(
+  null,
+  { deleteContact }
+)(ContactItem);
