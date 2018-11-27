@@ -1,0 +1,25 @@
+.add-contact-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.add-contact-form {
+  width: 100%;
+}
+
+.add-contact-input {
+  width: 100%;
+  margin: 1rem auto;
+  border: 1px solid var(--color-2b);
+  padding: 0.75rem;
+  /* background-color: white; */
+}
+
+/* #input-submit {
+  color: var(--color-2);
+} */
+
+#input-reset {
+  background-color: var(--color-1b);
+  /* color: var(--color-1b); */
+}

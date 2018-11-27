@@ -2,9 +2,12 @@
   /* display: flex;
   align-items: center; */
   margin: 1rem auto;
-  border: 1px solid var(--color-2);
+  border: 1px solid var(--color-2b);
+  border-radius: 0.25rem;
   padding: 0.75rem;
   list-style: none;
+  background-color: white;
+  /* vertical-align: middle; */
 }
 
 .contact-list-item-title {

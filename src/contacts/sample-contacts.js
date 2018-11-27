@@ -3,7 +3,7 @@ export const contacts = [
     id: "1nd3$truct1bl3",
     firstName: "Chuck",
     lastName: "Norris",
-    email: "my.tears.cure.cancer@toobadinevercry.com",
+    email: "my.tears.cure.cancer@toobadinevercry.cn",
     phone: "+1 111 111 1111",
     status: "favorite"
   },
@@ -35,7 +35,7 @@ export const contacts = [
     id: "4go0dm4n",
     firstName: "Antonio",
     lastName: "Guterres",
-    email: "save.the.refugees@un.org",
+    email: "run.forrest.run@un.org",
     phone: "+1 222 333 4444",
     status: "favorite"
   },
@@ -59,7 +59,7 @@ export const contacts = [
     id: "w1nd0w$3v3rywh3r3",
     firstName: "Bill",
     lastName: "Gates",
-    email: "trey@gatesfoundation.org",
+    email: "windows.everywhere@gatesfoundation.org",
     phone: "+1 (206) 709-3400",
     status: "neutral"
   },
@@ -75,7 +75,7 @@ export const contacts = [
     id: "h4nn1b4ll3ct3r",
     firstName: "Anthony",
     lastName: "Hopkins",
-    email: "oldfriend4dinner@loveliver.com",
+    email: "oldfriend4dinner@liverpate.com",
     phone: "+1 313 666 1313",
     status: "favorite"
   },
@@ -83,7 +83,7 @@ export const contacts = [
     id: "a$$t00b1g",
     firstName: "Kim",
     lastName: "Kardashian",
-    email: "weloveattention@kardashians.us",
+    email: "we.crave.attention@kardashians.us",
     phone: "+1 222 333 7777",
     status: "neutral"
   },
@@ -104,10 +104,18 @@ export const contacts = [
     status: "neutral"
   },
   {
+    id: "w1nt3r1$c0m1ng",
+    firstName: "Jon",
+    lastName: "Snow",
+    email: "winter_is_coming@nightswatch.com",
+    phone: "+1 456 234 0987",
+    status: "neutral"
+  },
+  {
     id: "b1t3y0ur34r$0ff",
     firstName: "Mike",
     lastName: "Tyson",
-    email: "lordoftherings@box.com",
+    email: "lord.of.the.rings@boxforever.com",
     phone: "+1 234 432 6677",
     status: "neutral"
   }
