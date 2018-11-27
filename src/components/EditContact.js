@@ -7,7 +7,7 @@ class EditContact extends Component {
 
   componentDidMount() {
     if (this.props.contacts.contacts.length === 0) {
-      this.props.history.push("/");
+      this.props.history.push("/contacts");
     } else {
       const { id } = this.props.match.params;
       const contact = this.props.contacts.contacts.find(
@@ -32,7 +32,7 @@ class EditContact extends Component {
       email: "",
       phone: ""
     });
-    this.props.history.push("/");
+    this.props.history.push("/contacts");
   };
 
   render() {

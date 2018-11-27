@@ -2,14 +2,12 @@ import "./App.css";
 import React, { Component } from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import rootReducer from "./reducers/reducerRoot";
 import Header from "./components/Header";
 import ContactList from "./components/ContactList";
 import AddContact from "./components/AddContact";
 import EditContact from "./components/EditContact";
-import Favorites from "./components/Favorites";
-import Blocked from "./components/Blocked";
 import About from "./components/About";
 import NotFound from "./components/NotFound";
 
@@ -27,12 +25,11 @@ class App extends Component {
             <Header />
             <main>
               <Switch>
-                <Route path="/" exact component={ContactList} />
-                <Route path="/add" exact component={AddContact} />
-                <Route path="/edit/:id" exact component={EditContact} />
-                <Route path="/favorite" exact component={Favorites} />
-                <Route path="/blocked" exact component={Blocked} />
-                <Route path="/about" exact component={About} />
+                <Redirect from="/" exact to="/about" />
+                <Route path="/contacts" component={ContactList} />
+                <Route path="/add" component={AddContact} />
+                <Route path="/edit/:id" component={EditContact} />
+                <Route path="/about" component={About} />
                 <Route component={NotFound} />
               </Switch>
             </main>

@@ -14,7 +14,7 @@ class AddContact extends Component {
     const newContact = { firstName, lastName, email, phone };
     this.props.addContact(newContact);
     this.setState({ firstName: "", lastName: "", email: "", phone: "" });
-    this.props.history.push("/");
+    this.props.history.push("/contacts");
   };
 
   render() {
