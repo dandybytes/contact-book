@@ -1,19 +1,37 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addContact } from "../actions/actions";
-import "./AddContact.css";
+import { updateContact } from "../actions/actions";
 
-class AddContact extends Component {
-  state = { firstName: "", lastName: "", email: "", phone: "" };
+class EditContact extends Component {
+  state = { id: "", firstName: "", lastName: "", email: "", phone: "" };
+
+  componentDidMount() {
+    if (this.props.contacts.contacts.length === 0) {
+      this.props.history.push("/");
+    } else {
+      const { id } = this.props.match.params;
+      const contact = this.props.contacts.contacts.find(
+        contact => contact.id === id
+      );
+      const { firstName, lastName, email, phone } = contact;
+      this.setState({ id, firstName, lastName, email, phone });
+    }
+  }
 
   handleInputChange = e => this.setState({ [e.target.name]: e.target.value });
 
   handleFormSubmit = e => {
     e.preventDefault();
-    const { firstName, lastName, email, phone } = this.state;
-    const newContact = { firstName, lastName, email, phone };
-    this.props.addContact(newContact);
-    this.setState({ firstName: "", lastName: "", email: "", phone: "" });
+    const { id, firstName, lastName, email, phone } = this.state;
+    const newContact = { id, firstName, lastName, email, phone };
+    this.props.updateContact(newContact);
+    this.setState({
+      id: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: ""
+    });
     this.props.history.push("/");
   };
 
@@ -28,6 +46,7 @@ class AddContact extends Component {
             name="firstName"
             required
             className="add-contact-input"
+            value={this.state.firstName}
             onChange={this.handleInputChange}
           />
           <label htmlFor="input-first-name">Last Name</label>
@@ -37,6 +56,7 @@ class AddContact extends Component {
             name="lastName"
             required
             className="add-contact-input"
+            value={this.state.lastName}
             onChange={this.handleInputChange}
           />
           <label htmlFor="input-email">Email</label>
@@ -45,6 +65,7 @@ class AddContact extends Component {
             id="input-email"
             name="email"
             className="add-contact-input"
+            value={this.state.email}
             onChange={this.handleInputChange}
           />
           <label htmlFor="input-phone">Phone</label>
@@ -53,11 +74,12 @@ class AddContact extends Component {
             id="input-phone"
             name="phone"
             className="add-contact-input"
+            value={this.state.phone}
             onChange={this.handleInputChange}
           />
           <input
             type="submit"
-            value="Add Contact"
+            value="Update Contact"
             className="input-submit"
             id="input-submit"
           />
@@ -68,7 +90,9 @@ class AddContact extends Component {
   }
 }
 
+const mapStateToProps = ({ contacts }) => ({ contacts });
+
 export default connect(
-  null,
-  { addContact }
-)(AddContact);
+  mapStateToProps,
+  { updateContact }
+)(EditContact);

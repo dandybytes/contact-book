@@ -7,6 +7,7 @@ import rootReducer from "./reducers/reducerRoot";
 import Header from "./components/Header";
 import ContactList from "./components/ContactList";
 import AddContact from "./components/AddContact";
+import EditContact from "./components/EditContact";
 import Favorites from "./components/Favorites";
 import Blocked from "./components/Blocked";
 import About from "./components/About";
@@ -28,6 +29,7 @@ class App extends Component {
               <Switch>
                 <Route path="/" exact component={ContactList} />
                 <Route path="/add" exact component={AddContact} />
+                <Route path="/edit/:id" exact component={EditContact} />
                 <Route path="/favorite" exact component={Favorites} />
                 <Route path="/blocked" exact component={Blocked} />
                 <Route path="/about" exact component={About} />

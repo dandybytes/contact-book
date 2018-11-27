@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteContact } from "../actions/actions";
 import "./ContactItem.css";
@@ -13,24 +14,34 @@ class ContactItem extends Component {
     const { id, firstName, lastName, email, phone } = this.props.contact;
     return (
       <li className="contact-list-item">
-        <h3 className="contact-list-item-title">
-          {`${firstName} ${lastName}`}
-          {this.state.showDetails ? (
+        <div className="contact-list-item-headline">
+          <div className="contact-list-item-headline-left">
+            <h3 className="contact-list-item-title">
+              {`${firstName} ${lastName}`}
+            </h3>
+            {this.state.showDetails ? (
+              <i
+                className="fas fa-caret-up details-icon"
+                onClick={this.toggleDetails}
+              />
+            ) : (
+              <i
+                className="fas fa-caret-down details-icon"
+                onClick={this.toggleDetails}
+              />
+            )}
+          </div>
+          <div className="contact-list-item-headline-right">
+            <Link to={`/edit/${id}`}>
+              <i className="fas fa-edit edit-icon" />
+            </Link>
             <i
-              className="fas fa-caret-up details-icon"
-              onClick={this.toggleDetails}
+              className="fas fa-times remove-icon"
+              onClick={() => this.props.deleteContact(id)}
             />
-          ) : (
-            <i
-              className="fas fa-caret-down details-icon"
-              onClick={this.toggleDetails}
-            />
-          )}
-          <i
-            className="fas fa-times remove-icon"
-            onClick={() => this.props.deleteContact(id)}
-          />
-        </h3>
+          </div>
+        </div>
+
         {this.state.showDetails && (
           <ul className="contact-data">
             <li className="contact-data-entry">
