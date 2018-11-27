@@ -1,0 +1,25 @@
+.logo-title {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0 1rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.65rem;
+  text-transform: uppercase;
+}
+
+.logo-title-img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+}
+
+.logo-title-1 {
+  /* color: white; */
+  font-weight: 300;
+}
+
+.logo-title-2 {
+  color: var(--color-2);
+  font-weight: 400;
+}

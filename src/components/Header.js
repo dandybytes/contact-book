@@ -1,17 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
 import "./Header.css";
 
 const Header = () => {
   return (
     <header>
-      {/* <div className="container"> */}
-      <div className="logo">
+      <Logo />
+      {/* <div className="logo">
         <h1 className="logo-title">
           <span className="logo-title-1">Contact</span>
           <span className="logo-title-2">Book</span>
         </h1>
-      </div>
+      </div> */}
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-list-item">
@@ -41,7 +42,6 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      {/* </div> */}
     </header>
   );
 };

@@ -6,22 +6,6 @@ header {
   color: white;
 }
 
-.logo-title {
-  margin: 0 1rem;
-  letter-spacing: 0.1rem;
-  font-size: 1.65rem;
-  text-transform: uppercase;
-}
-
-.logo-title-1 {
-  /* color: white; */
-  font-weight: 300;
-}
-
-.logo-title-2 {
-  color: var(--color-2);
-}
-
 .navbar-list {
   display: flex;
   margin-right: 1rem;
