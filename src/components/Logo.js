@@ -5,7 +5,7 @@ import "./Logo.css";
 const Logo = () => {
   return (
     <div className="logo">
-      <Link className="logo-link" to="/contacts">
+      <Link className="logo-link" to="/">
         <h1 className="logo-title">
           <span className="logo-title-1 a">C</span>
           <img

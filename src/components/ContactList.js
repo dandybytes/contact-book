@@ -6,6 +6,8 @@ import SettingsBar from "./SettingsBar";
 import ContactItem from "./ContactItem";
 
 class ContactList extends Component {
+  // uses the raw list of available contacts and...
+  // ...returns a filtered and sorted list of contacts ready to display
   processContacts = () => {
     const { statusFilter } = this.props.settings;
     let contacts = [];
@@ -29,24 +31,33 @@ class ContactList extends Component {
     return contacts || [];
   };
 
-  componentDidMount() {
-    if (this.props.contacts.contacts.length === 0) {
-      this.props.loadDefaultContacts();
-    }
-  }
-
   render() {
-    console.log(this.props);
     const contacts =
       this.props.contacts.contacts.length > 0 ? this.processContacts() : [];
     return (
       <React.Fragment>
         <SettingsBar />
-        <ul className="contact-list">
-          {contacts.map(contact => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))}
-        </ul>
+        {contacts.length > 0 ? (
+          <ul className="contact-list">
+            {contacts.map(contact => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))}
+          </ul>
+        ) : (
+          <div className="no-contacts">
+            <p className="no-contacts-message">
+              You have no contacts to display. Please use the "ADD" menu to
+              create new contacts or load a sample list by clicking the button
+              below.{" "}
+            </p>
+            <button
+              className="load-default-conctacts-button"
+              onClick={this.props.loadDefaultContacts}
+            >
+              load sample contact list
+            </button>
+          </div>
+        )}
       </React.Fragment>
     );
   }
