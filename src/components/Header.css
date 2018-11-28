@@ -18,10 +18,12 @@ header {
 
 .navbar-list-item-link {
   text-decoration: none;
+  text-transform: uppercase;
   color: white;
   opacity: 0.7;
 }
 
 .navbar-list-item-link:hover {
   opacity: 1;
+  font-weight: bold;
 }

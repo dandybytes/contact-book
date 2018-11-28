@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateContact } from "../actions/actions";
+import { updateContact } from "../actions/actionsContacts";
 
 class EditContact extends Component {
   state = { id: "", firstName: "", lastName: "", email: "", phone: "" };

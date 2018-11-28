@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { deleteContact } from "../actions/actions";
+import { deleteContact } from "../actions/actionsContacts";
 import "./ContactItem.css";
 
 class ContactItem extends Component {
@@ -11,13 +11,17 @@ class ContactItem extends Component {
     this.setState(prevState => ({ showDetails: !prevState.showDetails }));
 
   render() {
+    // console.log(this.props);
     const { id, firstName, lastName, email, phone } = this.props.contact;
     return (
       <li className="contact-list-item">
         <div className="contact-list-item-headline">
           <div className="contact-list-item-headline-left">
             <h3 className="contact-list-item-title">
-              {`${firstName} ${lastName}`}
+              {/* {`${firstName} ${lastName}`} */}
+              {this.props.settings.nameFormat === "first-last"
+                ? `${firstName} ${lastName}`
+                : `${lastName} ${firstName}`}
             </h3>
             {this.state.showDetails ? (
               <i
@@ -59,7 +63,9 @@ class ContactItem extends Component {
   }
 }
 
+const mapStateToProps = state => ({ settings: state.settings });
+
 export default connect(
-  null,
+  mapStateToProps,
   { deleteContact }
 )(ContactItem);

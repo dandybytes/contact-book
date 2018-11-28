@@ -85,7 +85,7 @@ export const contacts = [
     lastName: "Kardashian",
     email: "we.crave.attention@kardashians.us",
     phone: "+1 222 333 7777",
-    status: "neutral"
+    status: "blocked"
   },
   {
     id: "t33ng1rlzl0v3h1m",
@@ -109,7 +109,7 @@ export const contacts = [
     lastName: "Snow",
     email: "winter_is_coming@nightswatch.com",
     phone: "+1 456 234 0987",
-    status: "neutral"
+    status: "favorite"
   },
   {
     id: "b1t3y0ur34r$0ff",

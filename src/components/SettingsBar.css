@@ -1,0 +1,28 @@
+.settings-bar {
+  display: flex;
+  margin: 1rem auto;
+  border: 1px solid var(--color-2b);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: var(--color-2b);
+  /* color: white; */
+}
+
+.setting {
+  margin: 0 1rem;
+}
+
+.setting-label {
+  margin: 0 0.5rem 0 1.5rem;
+}
+/* 
+.setting-button {
+  margin: 0;
+  border: 1px solid var(--color-2);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  color: var(--color-2);
+  text-transform: none;
+  font-weight: 400;
+} */
