@@ -1,0 +1,62 @@
+.pagination {
+    text-align: center;
+    padding: 1rem 1rem 2rem;
+}
+.pagination-list {
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--color-2);
+    border-radius: 1rem;
+    list-style-type: none;
+}
+.pagination-list-item a.page-link {
+    display: inline-block;
+    position: relative;
+    height: 1.5rem;
+    width: 2rem;
+    z-index: 1;
+    background-color: transparent;
+    color: var(--color-2);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+}
+.pagination-list-item.active a.page-link,
+.pagination-list-item.active a.page-link:hover,
+.pagination-list-item a.page-link:hover {
+    color: #fff;
+    background: transparent;
+}
+.pagination-list-item a.page-link:before,
+.pagination-list-item a.page-link:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-right-color: var(--color-2);
+    border-right-style: solid;
+    border-right-width: 1px;
+    transform: skewX(-16deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+.pagination-list-item a.page-link:after {
+    /* background-color: rgb(130, 30, 130); */
+    background-color: var(--color-2);
+    background-color: var(--color-2a);
+    border-radius: 50%;
+    transform: skewX(-16deg) scale(0);
+}
+.pagination-list-item.active a.page-link:after,
+.pagination-list-item a.page-link:hover:after,
+.pagination-list-item.active a.page-link:hover:after {
+    border-radius: 0;
+    transform: skewX(-16deg) scale(1);
+}
