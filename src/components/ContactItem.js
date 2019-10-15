@@ -1,71 +1,70 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { deleteContact } from "../actions/actionsContacts";
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import {connect} from "react-redux";
+import {deleteContact} from "../actions/actionsContacts";
 import "./ContactItem.css";
 
 class ContactItem extends Component {
-  state = { showDetails: false };
+    state = {showDetails: false};
 
-  toggleDetails = () =>
-    this.setState(prevState => ({ showDetails: !prevState.showDetails }));
+    toggleDetails = () => this.setState(prevState => ({showDetails: !prevState.showDetails}));
 
-  render() {
-    // console.log(this.props);
-    const { id, firstName, lastName, email, phone } = this.props.contact;
-    return (
-      <li className="contact-list-item">
-        <div className="contact-list-item-headline">
-          <div className="contact-list-item-headline-left">
-            <h3 className="contact-list-item-title">
-              {/* {`${firstName} ${lastName}`} */}
-              {this.props.settings.nameFormat === "first-last"
-                ? `${firstName} ${lastName}`
-                : `${lastName} ${firstName}`}
-            </h3>
-            {this.state.showDetails ? (
-              <i
-                className="fas fa-caret-up details-icon"
-                onClick={this.toggleDetails}
-              />
-            ) : (
-              <i
-                className="fas fa-caret-down details-icon"
-                onClick={this.toggleDetails}
-              />
-            )}
-          </div>
-          <div className="contact-list-item-headline-right">
-            <Link to={`/edit/${id}`}>
-              <i className="fas fa-edit edit-icon" />
-            </Link>
-            <i
-              className="fas fa-times remove-icon"
-              onClick={() => this.props.deleteContact(id)}
-            />
-          </div>
-        </div>
+    render() {
+        // console.log(this.props);
+        const {id, firstName, lastName, email, phone} = this.props.contact;
+        return (
+            <li className="contact-list-item">
+                <div className="contact-list-item-headline">
+                    <div className="contact-list-item-headline-left">
+                        <h3 className="contact-list-item-title">
+                            {/* {`${firstName} ${lastName}`} */}
+                            {this.props.settings.nameFormat === "first-last"
+                                ? `${firstName} ${lastName}`
+                                : `${lastName} ${firstName}`}
+                        </h3>
+                        {this.state.showDetails ? (
+                            <i
+                                className="fas fa-caret-up details-icon"
+                                onClick={this.toggleDetails}
+                            />
+                        ) : (
+                            <i
+                                className="fas fa-caret-down details-icon"
+                                onClick={this.toggleDetails}
+                            />
+                        )}
+                    </div>
+                    <div className="contact-list-item-headline-right">
+                        <Link to={`/edit/${id}`}>
+                            <i className="fas fa-edit edit-icon" />
+                        </Link>
+                        <i
+                            className="fas fa-times remove-icon"
+                            onClick={() => this.props.deleteContact(id)}
+                        />
+                    </div>
+                </div>
 
-        {this.state.showDetails && (
-          <ul className="contact-data">
-            <li className="contact-data-entry">
-              {" "}
-              <i className="fas fa-at" /> {email}
+                {this.state.showDetails && (
+                    <ul className="contact-data">
+                        <li className="contact-data-entry">
+                            {" "}
+                            <i className="fas fa-at" /> {email}
+                        </li>
+                        <li className="contact-data-entry">
+                            {" "}
+                            <i className="fas fa-phone" /> {phone}
+                        </li>
+                    </ul>
+                )}
             </li>
-            <li className="contact-data-entry">
-              {" "}
-              <i className="fas fa-phone" /> {phone}
-            </li>
-          </ul>
-        )}
-      </li>
-    );
-  }
+        );
+    }
 }
 
-const mapStateToProps = state => ({ settings: state.settings });
+const mapStateToProps = state => ({settings: state.settings});
 
 export default connect(
-  mapStateToProps,
-  { deleteContact }
+    mapStateToProps,
+    {deleteContact}
 )(ContactItem);

@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {loadDefaultContacts} from "../actions/actionsContacts";
-import SettingsBar from "./SettingsBar";
 import ContactItem from "./ContactItem";
 import Pagination from "./Pagination";
 import "./ContactList.css";
@@ -42,7 +41,6 @@ class ContactList extends Component {
 
         return (
             <React.Fragment>
-                <SettingsBar />
                 {contacts.length > 0 ? (
                     <React.Fragment>
                         <ul className="contact-list">
