@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {loadDefaultContacts} from "../actions/actionsContacts";
-import "./ContactList.css";
 import SettingsBar from "./SettingsBar";
 import ContactItem from "./ContactItem";
 import Pagination from "./Pagination";
+import "./ContactList.css";
 
 class ContactList extends Component {
     // uses the raw list of available contacts and...
@@ -34,13 +34,19 @@ class ContactList extends Component {
         const contacts = this.props.contacts.contacts.length > 0 ? this.processContacts() : [];
         const {currentPage, itemsPerPage} = this.props.pagination;
 
+        // Pagination sets first page to 1 rather than 0 --> pageNum = index + 1
+        const contactsToShow = contacts.slice(
+            (currentPage - 1) * itemsPerPage,
+            currentPage * itemsPerPage
+        );
+
         return (
             <React.Fragment>
                 <SettingsBar />
                 {contacts.length > 0 ? (
                     <React.Fragment>
                         <ul className="contact-list">
-                            {contacts.map(contact => (
+                            {contactsToShow.map(contact => (
                                 <ContactItem key={contact.id} contact={contact} />
                             ))}
                         </ul>
@@ -71,4 +77,4 @@ class ContactList extends Component {
 
 const mapStateToProps = ({contacts, settings, pagination}) => ({contacts, settings, pagination});
 
-export default connect(mapStateToProps, { loadDefaultContacts })(ContactList); //prettier-ignore
+export default connect(mapStateToProps, {loadDefaultContacts})(ContactList); //prettier-ignore
