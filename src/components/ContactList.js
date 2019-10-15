@@ -42,24 +42,20 @@ class ContactList extends Component {
         return (
             <React.Fragment>
                 {contacts.length > 0 ? (
-                    <React.Fragment>
-                        <ul className="contact-list">
-                            {contactsToShow.map(contact => (
-                                <ContactItem key={contact.id} contact={contact} />
-                            ))}
-                        </ul>
-                        <Pagination
-                            currentPage={currentPage}
-                            itemsPerPage={itemsPerPage}
-                            totalItems={contacts.length}
-                        />
-                    </React.Fragment>
+                    <ul className="contact-list">
+                        {contactsToShow.map(contact => (
+                            <ContactItem key={contact.id} contact={contact} />
+                        ))}
+                    </ul>
                 ) : (
                     <div className="no-contacts">
-                        <p className="no-contacts-message">
-                            You have no contacts to display. Please use the "ADD" menu to create new
-                            contacts or load a sample list by clicking the button below.
-                        </p>
+                        <div className="no-contacts-message">
+                            <h3>You have no contacts to display.</h3>
+                            <p>
+                                Please use the "ADD" menu to create new contacts or load a sample
+                                list by clicking the button below.
+                            </p>
+                        </div>
                         <button
                             className="load-default-conctacts-button"
                             onClick={this.props.loadDefaultContacts}
@@ -67,6 +63,13 @@ class ContactList extends Component {
                             load sample contact list
                         </button>
                     </div>
+                )}
+                {contacts.length > itemsPerPage && (
+                    <Pagination
+                        currentPage={currentPage}
+                        itemsPerPage={itemsPerPage}
+                        totalItems={contacts.length}
+                    />
                 )}
             </React.Fragment>
         );
