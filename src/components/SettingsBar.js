@@ -18,6 +18,9 @@ class SettingsBar extends Component {
     state = {};
 
     handleSelect = e => {
+        // resetting the page number every time settings are changed
+        // this prevents bizarre situations occurring when settings change
+        this.props.setCurrentPage(1);
         switch (e.target.value) {
             case "first-last":
                 this.props.formatNameFirstLast();
@@ -48,8 +51,6 @@ class SettingsBar extends Component {
             case "20":
             case "50":
                 this.props.setItemsPerPage(parseInt(e.target.value));
-                //reset the page to prevent blank pages when switching from fewer items/page to more items/page
-                this.props.setCurrentPage(1);
                 break;
             default:
                 return;
