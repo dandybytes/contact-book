@@ -4,10 +4,13 @@
 
 :root {
     --color-1: rgb(130, 30, 130);
+    --color-1a: rgba(130, 30, 130, 0.75);
     --color-1b: rgba(130, 30, 130, 0.5);
+    --color-1c: rgba(130, 30, 130, 0.05);
     --color-2: rgb(0, 160, 225);
     --color-2a: rgba(0, 160, 225, 0.75);
     --color-2b: rgba(0, 160, 225, 0.3);
+    --color-2c: rgba(0, 160, 225, 0.05);
 }
 
 html,

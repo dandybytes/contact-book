@@ -1,68 +1,73 @@
 .contact-list-item {
-  margin: 1rem auto;
-  border: 1px solid var(--color-2b);
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  list-style: none;
-  background-color: white;
+    margin: 1rem auto;
+    /* border: 1px solid var(--color-2b); */
+    /* border-radius: 0.25rem; */
+    padding: 0.5rem 1rem;
+    list-style: none;
+    background-color: var(--color-1c);
+}
+
+.contact-list-item:nth-child(even) {
+    background-color: var(--color-2c);
 }
 
 .contact-list-item-headline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contact-list-item-headline-left {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .contact-list-item-headline-right {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .contact-list-item-title {
-  margin: 0;
-  font-size: 1.15rem;
-  color: var(--color-1);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-1);
 }
 
 .details-icon {
-  cursor: pointer;
-  color: var(--color-2);
-  margin-left: 0.5rem;
+    cursor: pointer;
+    color: var(--color-2);
+    margin-left: 0.5rem;
 }
 
 .edit-icon {
-  float: right;
-  margin-right: 1rem;
-  cursor: pointer;
-  color: var(--color-2);
-  /* color: #666; */
-  font-size: 1rem;
+    float: right;
+    margin-right: 1rem;
+    cursor: pointer;
+    color: var(--color-2);
+    /* color: #666; */
+    font-size: 1rem;
 }
 
 .remove-icon {
-  float: right;
-  cursor: pointer;
-  color: firebrick;
-  font-weight: bold;
-  font-size: 1.5rem;
+    float: right;
+    cursor: pointer;
+    color: firebrick;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 .contact-data {
-  list-style: none;
-  margin: 0.75rem 0 0.5rem 0;
+    list-style: none;
+    margin: 0.75rem 0 0.5rem 0;
 }
 
 .contact-data-entry {
-  margin: 0 0 -1px 0;
-  border: 1px dotted var(--color-2);
-  padding: 0.75rem;
+    margin: 0 0 -1px 0;
+    border: 1px dotted var(--color-2b);
+    padding: 0.75rem;
 }
 
 .contact-data-entry i {
-  margin: 0 0.5rem;
+    margin: 0 0.5rem;
 }
