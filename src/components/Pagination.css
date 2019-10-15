@@ -25,6 +25,7 @@
     line-height: 1.5rem;
     text-decoration: none;
     text-align: center;
+    cursor: pointer;
 }
 .pagination-list-item.active a.page-link,
 .pagination-list-item.active a.page-link:hover,
