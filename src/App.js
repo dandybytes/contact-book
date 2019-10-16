@@ -1,8 +1,7 @@
 import React, {Component} from "react";
-import {createStore} from "redux";
 import {Provider} from "react-redux";
+import store from "./store/store";
 import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
-import rootReducer from "./reducers/reducerRoot";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import AddContact from "./components/AddContact";
@@ -10,11 +9,6 @@ import EditContact from "./components/EditContact";
 import About from "./components/About";
 import NotFound from "./components/NotFound";
 import "./App.css";
-
-const store = createStore(
-    rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
 class App extends Component {
     render() {

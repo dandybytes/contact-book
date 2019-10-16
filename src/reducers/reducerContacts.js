@@ -1,9 +1,9 @@
-import {contacts} from "../contacts/sample-contacts";
+import {sampleContacts} from "../contacts/sample-contacts";
 
 const reducerContacts = (state = {contacts: []}, action) => {
     switch (action.type) {
         case "load_default_contacts":
-            return {...state, contacts};
+            return {...state, contacts: sampleContacts};
         case "delete_contact":
             return {
                 ...state,
