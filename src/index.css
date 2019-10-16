@@ -66,3 +66,16 @@ button:hover {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+@media only screen and (max-width: 500px) {
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    button {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+    }
+}

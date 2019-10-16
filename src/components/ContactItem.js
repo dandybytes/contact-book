@@ -10,14 +10,12 @@ class ContactItem extends Component {
     toggleDetails = () => this.setState(prevState => ({showDetails: !prevState.showDetails}));
 
     render() {
-        // console.log(this.props);
         const {id, firstName, lastName, email, phone} = this.props.contact;
         return (
             <li className="contact-list-item">
                 <div className="contact-list-item-headline">
                     <div className="contact-list-item-headline-left">
                         <h3 className="contact-list-item-title">
-                            {/* {`${firstName} ${lastName}`} */}
                             {this.props.settings.nameFormat === "first-last"
                                 ? `${firstName} ${lastName}`
                                 : `${lastName} ${firstName}`}

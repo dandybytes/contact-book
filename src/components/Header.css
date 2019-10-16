@@ -1,14 +1,17 @@
 header {
+    width: 100vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0.5rem 1rem;
     background-color: var(--color-1);
     color: white;
 }
 
 .navbar-list {
     display: flex;
-    margin-right: 1rem;
+    margin: 0.5rem 1rem 0.5rem 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -25,12 +28,19 @@ header {
 
 .navbar-list-item-link-active {
     text-decoration: underline;
-    /* text-transform: uppercase;
-  color: white;
-  opacity: 0.7; */
 }
 
 .navbar-list-item-link:hover {
     opacity: 1;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        flex-direction: column;
+    }
+
+    .navbar-list {
+        margin: 0.5rem auto;
+    }
 }

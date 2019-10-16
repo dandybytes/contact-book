@@ -71,3 +71,22 @@
 .contact-data-entry i {
     margin: 0 0.5rem;
 }
+
+@media only screen and (max-width: 500px) {
+    .contact-list-item {
+        margin: 0.75rem auto;
+        padding: 0.3rem 1rem;
+    }
+
+    .contact-list-item-title {
+        font-size: 0.8rem;
+    }
+
+    .remove-icon {
+        font-size: 0.9rem;
+    }
+
+    .edit-icon {
+        font-size: 0.75rem;
+    }
+}
