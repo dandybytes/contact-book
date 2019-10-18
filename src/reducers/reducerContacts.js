@@ -12,7 +12,7 @@ const reducerContacts = (state = {contacts: []}, action) => {
         case "add_contact":
             return {
                 ...state,
-                contacts: [...state.contacts, {...action.contact, id: +new Date()}]
+                contacts: [...state.contacts, {...action.contact, id: `${+new Date()}`}]
             };
         case "update_contact":
             return {

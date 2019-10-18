@@ -6,7 +6,7 @@ import "./AddContact.css";
 class AddContact extends Component {
     state = {firstName: "", lastName: "", email: "", phone: ""};
 
-    handleInputChange = e => this.setState({[e.target.name]: e.target.value});
+    handleInputChange = e => this.setState({[e.target.name]: e.target.value.trim()});
 
     handleFormSubmit = e => {
         e.preventDefault();
