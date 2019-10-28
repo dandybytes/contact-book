@@ -6,7 +6,7 @@ import Header from "./components/common/Header";
 import Home from "./components/Home";
 import AddContact from "./components/AddContact";
 import EditContact from "./components/EditContact";
-import About from "./components/About";
+import AboutPage from "./components/AboutPage";
 import NotFound from "./components/NotFound";
 import "./App.css";
 
@@ -23,7 +23,7 @@ class App extends Component {
                                 <Route path="/contacts" component={Home} />
                                 <Route path="/add" component={AddContact} />
                                 <Route path="/edit/:id" component={EditContact} />
-                                <Route path="/about" component={About} />
+                                <Route path="/about" component={AboutPage} />
                                 <Route component={NotFound} />
                             </Switch>
                         </main>

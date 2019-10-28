@@ -1,11 +1,12 @@
 .tab-board {
     position: relative;
     height: 20rem;
-    width: 80vw;
-    max-width: 60vh;
+    max-height: 80vh;
+    width: 90%;
+    max-width: 100vh;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
     text-align: center;
     color: var(--color-1a);
     overflow: hidden;
@@ -57,6 +58,7 @@
     line-height: 1.2rem;
     letter-spacing: 0;
     text-transform: none;
+    cursor: auto;
     visibility: hidden;
     opacity: 0;
     transition: all 1s;
@@ -67,13 +69,50 @@
     opacity: 1;
 }
 
-@media only screen and (max-width: 500px) {
-    /* .tab-board {
-        width: 80vw;
-    } */
+@media only screen and (min-width: 560px) {
+    .tab-title-label {
+        font-size: 1rem;
+    }
+}
 
-    /* .tab-title-label {
-        font-size: 0.8rem;
-        letter-spacing: 0.1rem;
-    } */
+@media only screen and (min-width: 760px) and (min-height: 760px) {
+    .tab-board {
+        height: 30rem;
+    }
+
+    .tab-title-label {
+        height: 2.5rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.2rem;
+        line-height: 2rem;
+    }
+
+    .tab-title-label:not(:last-of-type) {
+        margin-right: 0.2rem;
+    }
+
+    .tab-content {
+        top: 2.7rem;
+        height: calc(100% - 2.5rem);
+        padding: 0 3rem;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (min-height: 760px) {
+    .tab-board {
+        height: 35rem;
+    }
+
+    .tab-title-label {
+        height: 3rem;
+    }
+
+    .tab-content {
+        top: 3.2rem;
+        height: calc(100% - 3rem);
+        padding: 0 4rem;
+        line-height: 2rem;
+    }
 }
