@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {loadDefaultContacts} from "../actions/actionsContacts";
 import ContactItem from "./ContactItem";
-import Pagination from "./Pagination";
+import Pagination from "./common/Pagination";
 import "./ContactList.css";
 
 class ContactList extends Component {

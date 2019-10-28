@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Provider} from "react-redux";
 import store from "./store/store";
 import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/common/Header";
 import Home from "./components/Home";
 import AddContact from "./components/AddContact";
 import EditContact from "./components/EditContact";

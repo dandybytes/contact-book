@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setCurrentPage} from "../actions/actionsPagination";
+import {setCurrentPage} from "../../actions/actionsPagination";
 import "./Pagination.css";
 
 const Pagination = ({currentPage, itemsPerPage, totalItems, setCurrentPage}) => {
