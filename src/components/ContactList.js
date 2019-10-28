@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {loadDefaultContacts} from "../actions/actionsContacts";
 import ContactItem from "./ContactItem";
+import Button from "./common/Button";
 import Pagination from "./common/Pagination";
 import "./ContactList.css";
 
@@ -27,6 +28,11 @@ class ContactList extends Component {
             contacts.sort((a, b) => (a.lastName.toLowerCase() < b.lastName.toLowerCase() ? -1 : 1));
         }
         return contacts || [];
+    };
+
+    handleLoadSampleContacts = e => {
+        e.preventDefault();
+        this.props.loadDefaultContacts();
     };
 
     render() {
@@ -56,12 +62,12 @@ class ContactList extends Component {
                                 list by clicking the button below.
                             </p>
                         </div>
-                        <button
-                            className="load-default-conctacts-button"
-                            onClick={this.props.loadDefaultContacts}
+                        <Button
+                            className="button-animated-borders"
+                            onClick={this.handleLoadSampleContacts}
                         >
                             load sample contact list
-                        </button>
+                        </Button>
                     </div>
                 )}
                 {contacts.length > itemsPerPage && (

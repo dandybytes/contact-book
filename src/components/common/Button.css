@@ -9,14 +9,14 @@
 .button-animated-borders {
     position: relative;
     display: block;
-    padding: 0.5rem 3rem;
-    color: var(--color-1);
+    padding: 0.5rem 1.5rem;
+    color: var(--color-4);
     background: transparent;
-    background-color: var(--color-1c);
-    font-size: 1rem;
-    font-weight: 700;
+    background-color: var(--color-1b);
+    font-size: 0.8rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     text-decoration: none;
     overflow: hidden;
 }
