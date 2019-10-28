@@ -60,6 +60,8 @@
 .contact-data {
     list-style: none;
     margin: 0.75rem 0 0.5rem 0;
+    padding: 0;
+    font-size: 1rem;
 }
 
 .contact-data-entry {
@@ -88,5 +90,14 @@
 
     .edit-icon {
         font-size: 0.75rem;
+    }
+
+    .contact-data {
+        font-size: 0.75rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    .contact-data-entry {
+        padding: 0.5rem;
     }
 }
