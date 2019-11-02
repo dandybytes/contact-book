@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {loadDefaultContacts} from "../actions/actionsContacts";
+import {resetSettings} from "../actions/actionsSettings";
+import {resetPagination} from "../actions/actionsPagination";
 import ContactItem from "./ContactItem";
 import Button from "./common/Button";
 import Pagination from "./common/Pagination";
@@ -33,6 +35,8 @@ class ContactList extends Component {
     handleLoadSampleContacts = e => {
         e.preventDefault();
         this.props.loadDefaultContacts();
+        this.props.resetSettings();
+        this.props.resetPagination();
     };
 
     render() {
@@ -96,4 +100,4 @@ class ContactList extends Component {
 
 const mapStateToProps = ({contacts, settings, pagination}) => ({contacts, settings, pagination});
 
-export default connect(mapStateToProps, {loadDefaultContacts})(ContactList); //prettier-ignore
+export default connect(mapStateToProps, {loadDefaultContacts, resetSettings, resetPagination})(ContactList); //prettier-ignore

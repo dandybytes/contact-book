@@ -9,6 +9,8 @@ const reducerPagination = (state = defaultPageState, action) => {
             return {...state, itemsPerPage: action.itemsPerPage};
         case "set_current_page":
             return {...state, currentPage: action.currentPage};
+        case "reset_pagination":
+            return defaultPageState;
         default:
             return state;
     }

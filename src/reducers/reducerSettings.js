@@ -23,6 +23,8 @@ const reducerSettings = (state = defaultSettings, action) => {
             return {...state, statusFilter: "blocked"};
         case "status_filter_neutral":
             return {...state, statusFilter: "neutral"};
+        case "reset_settings":
+            return defaultSettings;
         default:
             return state;
     }
