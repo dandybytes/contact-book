@@ -10,11 +10,15 @@ class ContactItem extends Component {
     toggleDetails = () => this.setState(prevState => ({showDetails: !prevState.showDetails}));
 
     render() {
-        const {id, firstName, lastName, email, phone} = this.props.contact;
+        const {id, firstName, lastName, email, phone, status} = this.props.contact;
+        const backgroundColor =
+            status === "favorite" ? "green" : status === "blocked" ? "firebrick" : "var(--color-1)";
+
         return (
             <li className="contact-list-item">
                 <div className="contact-list-item-headline">
                     <div className="contact-list-item-headline-left" onClick={this.toggleDetails}>
+                        <span className="contact-status-mark" style={{backgroundColor}} />
                         <h3 className="contact-list-item-title">
                             {this.props.settings.nameFormat === "first-last"
                                 ? `${firstName} ${lastName}`
