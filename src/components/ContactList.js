@@ -38,12 +38,38 @@ class ContactList extends Component {
     render() {
         const contacts = this.props.contacts.contacts.length > 0 ? this.processContacts() : [];
         const {currentPage, itemsPerPage} = this.props.pagination;
+        const {statusFilter} = this.props.settings;
 
         // Pagination sets first page to 1 rather than 0 --> pageNum = index + 1
         const contactsToShow = contacts.slice(
             (currentPage - 1) * itemsPerPage,
             currentPage * itemsPerPage
         );
+
+        const noContacts =
+            statusFilter === "all" ? (
+                <div className="no-contacts">
+                    <div className="no-contacts-message">
+                        <h3>You have no contacts to display.</h3>
+                        <p>
+                            Please use the "ADD" menu to create new contacts or load a sample list
+                            by clicking the button below.
+                        </p>
+                    </div>
+                    <Button
+                        className="button-animated-borders"
+                        onClick={this.handleLoadSampleContacts}
+                    >
+                        load sample contact list
+                    </Button>
+                </div>
+            ) : (
+                <div className="no-contacts">
+                    <div className="no-contacts-message">
+                        <p>no {statusFilter} contacts left</p>
+                    </div>
+                </div>
+            );
 
         return (
             <React.Fragment>
@@ -54,21 +80,7 @@ class ContactList extends Component {
                         ))}
                     </ul>
                 ) : (
-                    <div className="no-contacts">
-                        <div className="no-contacts-message">
-                            <h3>You have no contacts to display.</h3>
-                            <p>
-                                Please use the "ADD" menu to create new contacts or load a sample
-                                list by clicking the button below.
-                            </p>
-                        </div>
-                        <Button
-                            className="button-animated-borders"
-                            onClick={this.handleLoadSampleContacts}
-                        >
-                            load sample contact list
-                        </Button>
-                    </div>
+                    noContacts
                 )}
                 {contacts.length > itemsPerPage && (
                     <Pagination
