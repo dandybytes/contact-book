@@ -20,6 +20,10 @@ const AboutTech = () => {
                     <th>CSS</th>
                     <td>styling language</td>
                 </tr>
+                <tr>
+                    <th>Netlify</th>
+                    <td>cloud hosting platform</td>
+                </tr>
             </tbody>
         </table>
     );
