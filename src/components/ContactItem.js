@@ -14,7 +14,7 @@ class ContactItem extends Component {
         return (
             <li className="contact-list-item">
                 <div className="contact-list-item-headline">
-                    <div className="contact-list-item-headline-left">
+                    <div className="contact-list-item-headline-left" onClick={this.toggleDetails}>
                         <h3 className="contact-list-item-title">
                             {this.props.settings.nameFormat === "first-last"
                                 ? `${firstName} ${lastName}`
@@ -23,12 +23,12 @@ class ContactItem extends Component {
                         {this.state.showDetails ? (
                             <i
                                 className="fas fa-caret-up details-icon"
-                                onClick={this.toggleDetails}
+                                // onClick={this.toggleDetails}
                             />
                         ) : (
                             <i
                                 className="fas fa-caret-down details-icon"
-                                onClick={this.toggleDetails}
+                                // onClick={this.toggleDetails}
                             />
                         )}
                     </div>

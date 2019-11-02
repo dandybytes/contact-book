@@ -19,7 +19,9 @@
 
 .contact-list-item-headline-left {
     display: flex;
+    flex: 1;
     align-items: center;
+    cursor: pointer;
 }
 
 .contact-list-item-headline-right {
@@ -35,7 +37,7 @@
 }
 
 .details-icon {
-    cursor: pointer;
+    /* cursor: pointer; */
     color: var(--color-2);
     margin-left: 0.5rem;
 }

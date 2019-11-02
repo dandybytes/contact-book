@@ -67,7 +67,7 @@ export const sampleContacts = [
         id: "sp4c31nv4d3r",
         firstName: "Elon",
         lastName: "Musk",
-        email: "aim.for.the.sun@tesla.com",
+        email: "aim.for.the.sun@spacex.com",
         phone: "+1 (888) 777-3434",
         status: "neutral"
     },
