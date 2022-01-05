@@ -25,5 +25,5 @@ yarn-error.log*
 # notes:
 /_notes
 
-# Local Netlify folder
+# local netlify state
 .netlify
