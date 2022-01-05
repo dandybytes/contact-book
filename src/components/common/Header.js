@@ -1,12 +1,15 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import Logo from "./Logo";
+
 import "./Header.css";
+
+import Logo from "./Logo";
 
 const Header = () => {
     return (
         <header>
             <Logo />
+
             <nav className="navbar">
                 <ul className="navbar-list">
                     <li className="navbar-list-item">

@@ -1,5 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
+
+import contactPersonImage from "../../assets/images/contacts.png";
+
 import "./Logo.css";
 
 const Logo = () => {
@@ -8,7 +11,7 @@ const Logo = () => {
             <Link className="logo-link" to="/">
                 <h1 className="logo-title">
                     <span className="logo-title-1 a">C</span>
-                    <img src="./contacts.png" alt="contacts logo" className="logo-title-img" />
+                    <img src={contactPersonImage} alt="contacts logo" className="logo-title-img" />
                     <span className="logo-title-1 b">ntact</span>
                     <span className="logo-title-2">Book</span>
                 </h1>
